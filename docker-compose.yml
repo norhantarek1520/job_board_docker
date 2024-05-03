@@ -27,32 +27,7 @@ services:
       - ./jobs_service:/app
       - /app/node_modules  # Assuming Node.js application
 
-# ##==================================================categories=======================================================================
-  categories_db:
-    image: mongo:3.6.19-xenial
-    container_name: categories_db
-    networks:
-      - jobboard-app
-    volumes:
-      - category-data:/data/db
-
-  categories_service:
-    build: ./categories_service
-    container_name: categories_service_container
-    ports:
-      - "5000:5000"
-    networks:
-      - jobboard-app
-    links:
-      - categories_db
-    restart: on-failure
-    depends_on:
-      - categories_db
-    volumes:
-      - ./categories_service:/app
-      - /app/node_modules  # Assuming Node.js application
-
-# ##================================================recommend_service =================================================================
+##================================================recommend_service =================================================================
   
   recommend_service:
     build: ./recommend_service
@@ -116,7 +91,7 @@ services:
       - ./companies_service:/app
       - /app/node_modules  # Assuming Node.js application
 
-# ##==================================================client=====================================================================
+##==================================================client=====================================================================
   
   client:
     build: ./client
@@ -129,6 +104,31 @@ services:
     volumes:
       - ./client:/app
       - /app/node_modules
+
+##==================================================categories=======================================================================
+  categories_db:
+    image: mongo:3.6.19-xenial
+    container_name: categories_db
+    networks:
+      - jobboard-app
+    volumes:
+      - category-data:/data/db
+
+  categories_service:
+    build: ./categories_service
+    container_name: categories_service_container
+    ports:
+      - "5000:5000"
+    networks:
+      - jobboard-app
+    links:
+      - categories_db
+    restart: on-failure
+    depends_on:
+      - categories_db
+    volumes:
+      - ./categories_service:/app
+      - /app/node_modules  # Assuming Node.js application
 
 
 #================================================users ============================================================================
@@ -161,5 +161,5 @@ volumes:
   category-data:
   job-data:
   applications-data:
-  companies-data :
+  companies-data:
   # postgres_dev_data:

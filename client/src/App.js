@@ -17,13 +17,16 @@ import Login from "./Pages/Users/Login";
 import Signup from "./Pages/Users/Signup";
 import UserProfile from "./Pages/Users/UserProfile";
 
+
 function App() {
   return (
     <div className="App">
+       
       <Router>
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
+         
           <Route path="/CatagoryArea" element={<CatagoryArea />} />
           <Route path="/ApplicationArea" element={<ApplicationArea />} />
           <Route path="/JobDeatailsArea" element={<JobDeatailsArea />} />

@@ -1,5 +1,5 @@
 import axios from 'axios';
-
+// const axios = require('axios/dist/browser/axios.cjs'); // browser
 const usersServiceApi = axios.create({
     baseURL: 'http://127.0.0.1:8000',
 });

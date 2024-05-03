@@ -5,7 +5,11 @@ const ApiError = require('../Shared/ApiError')
 class CategoryController {
 
     static createCategory = asyncHandler(async (req, res, next) => {
-        const category = await Category.create({ name: req.body.name, slug: slugify(req.body.name) })
+        const category = await Category.create({ 
+            name: req.body.name, 
+            slug: slugify(req.body.name) ,
+            description: req.body.description 
+        })
         res.status(201).json({ "message": "Category Created Succesfully ", data: category })
 
     })
@@ -24,7 +28,7 @@ class CategoryController {
     static updateCategory = asyncHandler(async (req, res, next) => {
         const category = await Category.findOneAndUpdate(
             { _id: req.params.id },
-            { name: req.body.name, slug: slugify(req.body.name) },
+            { name: req.body.name, slug: slugify(req.body.name) , description: req.body.description },
             { new: true })
         if (!category) { return next(new ApiError(`No Category for this id ${req.params.id}`, 404)); }
         res.status(201).json({ "message": "Category Updated Succesfully ", data: category })

@@ -34,11 +34,11 @@ function Recommendation() {
     <div>
 
    {/* <!-- bradcam_area  --> */}
-   <div class="bradcam_area bradcam_bg_1">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-12">
-                    <div class="bradcam_text">
+   <div className="bradcam_area bradcam_bg_1">
+        <div className="container">
+            <div className="row">
+                <div className="col-xl-12">
+                    <div className="bradcam_text">
                         <h3>Recommendation page </h3>
                     </div>
                 </div>

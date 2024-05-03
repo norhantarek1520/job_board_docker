@@ -3,51 +3,51 @@ import React from "react";
 
 import Recommendation from './Recomendation/Recommendation';
 import ApplicationCart from "../Components/ApplicationCart";
-import CategoriesCart from '../Components/CategoriesCart'
+// import CategoriesCart from '../Components/CategoriesCart'
 import JobCart from '../Components/JobCart'
-
+import CategoryList from '../Components/CategoryList'
 
 function Home(){
 return(
 <div>
 
-    <div class="slider_area">
-        <div class="single_slider  d-flex align-items-center slider_bg_1">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-7 col-md-6">
-                        <div class="slider_text">
-                            <h5 class="wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".2s">4536+ Jobs listed</h5>
-                            <h3 class="wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".3s">Find your Dream Job</h3>
-                            <p class="wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".4s">We provide online instant cash loans with quick approval that suit your term length</p>
+    <div className="slider_area">
+        <div className="single_slider  d-flex align-items-center slider_bg_1">
+            <div className="container">
+                <div className="row align-items-center">
+                    <div className="col-lg-7 col-md-6">
+                        <div className="slider_text">
+                            <h5 className="wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".2s">4536+ Jobs listed</h5>
+                            <h3 className="wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".3s">Find your Dream Job</h3>
+                            <p className="wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".4s">We provide online instant cash loans with quick approval that suit your term length</p>
                            
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="ilstration_img wow fadeInRight d-none d-lg-block text-right" data-wow-duration="1s" data-wow-delay=".2s">
+        <div className="ilstration_img wow fadeInRight d-none d-lg-block text-right" data-wow-duration="1s" data-wow-delay=".2s">
             <img src="../public/assets/img/banner/illustration.png" alt=""/>
         </div>
     </div>
 
      {/* <!-- popular_catagory_area_start  --> */}
-   <CategoriesCart/>
+   {/* <CategoriesCart/> */}
     {/* <!-- popular_catagory_area_end  --> */}
-
+    <CategoryList />
 
      {/* <!-- job_listing_area_start  --> */}
-     <div class="job_listing_area">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <div class="section_title">
+     <div className="job_listing_area">
+        <div className="container">
+            <div className="row align-items-center">
+                <div className="col-lg-6">
+                    <div className="section_title">
                         <h3>Job Listing</h3>
                     </div>
                 </div>
-                <div class="col-lg-6">
-                    <div class="brouse_job text-right">
-                        <a href="/JobsArea" class="boxed-btn4">Browse More Job</a>
+                <div className="col-lg-6">
+                    <div className="brouse_job text-right">
+                        <a href="/JobsArea" className="boxed-btn4">Browse More Job</a>
                     </div>
                 </div>
             </div>
@@ -58,21 +58,21 @@ return(
 
     {/* <!-- job_searcing_wrap  --> */}
     <div></div>
-    <div class="job_searcing_wrap overlay">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-5 offset-lg-1 col-md-6">
-                    <div class="searching_text">
+    <div className="job_searcing_wrap overlay">
+        <div className="container">
+            <div className="row">
+                <div className="col-lg-5 offset-lg-1 col-md-6">
+                    <div className="searching_text">
                         <h3>Looking for a Job?</h3>
                         <p>We provide online instant cash loans with quick approval </p>
-                        <a href="/JobsArea" class="boxed-btn3">Browse Job</a>
+                        <a href="/JobsArea" className="boxed-btn3">Browse Job</a>
                     </div>
                 </div>
-                <div class="col-lg-5 offset-lg-1 col-md-6">
-                    <div class="searching_text">
+                <div className="col-lg-5 offset-lg-1 col-md-6">
+                    <div className="searching_text">
                         <h3>Looking for a Expert?</h3>
                         <p>We provide online instant cash loans with quick approval </p>
-                        <a href="/PostJob" class="boxed-btn3">Post a Job</a>
+                        <a href="/PostJob" className="boxed-btn3">Post a Job</a>
                     </div>
                 </div>
             </div>
@@ -82,26 +82,26 @@ return(
 
 
     {/* <!-- testimonial_area  --> */}
-    <div class="testimonial_area  ">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section_title text-center mb-40">
+    <div className="testimonial_area  ">
+        <div className="container">
+            <div className="row">
+                <div className="col-lg-12">
+                    <div className="section_title text-center mb-40">
                         <h3>Testimonial</h3>
                     </div>
-                    <div class="col-xl-12">
-                    <div class="testmonial_active owl-carousel">
-                        <div class="single_carousel">
-                            <div class="row">
-                                <div class="col-lg-11">
-                                    <div class="single_testmonial d-flex align-items-center">
-                                        <div class="thumb">
+                    <div className="col-xl-12">
+                    <div className="testmonial_active owl-carousel">
+                        <div className="single_carousel">
+                            <div className="row">
+                                <div className="col-lg-11">
+                                    <div className="single_testmonial d-flex align-items-center">
+                                        <div className="thumb">
                                             <img src="../public/assets/img/testmonial/author.png" alt=""/>
-                                            <div class="quote_icon">
-                                                <i class="Flaticon flaticon-quote"></i>
+                                            <div className="quote_icon">
+                                                <i className="Flaticon flaticon-quote"></i>
                                             </div>
                                         </div>
-                                        <div class="info">
+                                        <div className="info">
                                             <p>"Working in conjunction with humanitarian aid agencies, we have supported programmes to help alleviate human suffering through animal welfare when people might depend on livestock as their only source of income or food.</p>
                                             <span>- Micky Mouse</span>
                                         </div>
@@ -109,17 +109,17 @@ return(
                                 </div>
                             </div>
                         </div>
-                        <div class="single_carousel">
-                            <div class="row">
-                                <div class="col-lg-11">
-                                    <div class="single_testmonial d-flex align-items-center">
-                                        <div class="thumb">
+                        <div className="single_carousel">
+                            <div className="row">
+                                <div className="col-lg-11">
+                                    <div className="single_testmonial d-flex align-items-center">
+                                        <div className="thumb">
                                             <img src="../public/assets/img/testmonial/author.png" alt=""/>
-                                            <div class="quote_icon">
-                                                <i class="Flaticon flaticon-quote"></i>
+                                            <div className="quote_icon">
+                                                <i className="Flaticon flaticon-quote"></i>
                                             </div>
                                         </div>
-                                        <div class="info">
+                                        <div className="info">
                                             <p>"Working in conjunction with humanitarian aid agencies, we have supported programmes to help alleviate human suffering through animal welfare when people might depend on livestock as their only source of income or food.</p>
                                             <span>- Micky Mouse</span>
                                         </div>

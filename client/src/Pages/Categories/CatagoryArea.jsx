@@ -1,14 +1,15 @@
 import React from "react";
-import CategoriesCart from "../../Components/CategoriesCart";
+import CategoryList from '../../Components/CategoryList'
+// import CategoriesCart from "../../Components/CategoriesCart";
 function CatagoryArea(){
 return(
 <div>
 {/* <!-- bradcam_area  --> */}
-<div class="bradcam_area bradcam_bg_1">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-12">
-                    <div class="bradcam_text">
+<div className="bradcam_area bradcam_bg_1">
+        <div className="container">
+            <div className="row">
+                <div className="col-xl-12">
+                    <div className="bradcam_text">
                         <h3>All Catagories </h3>
                     </div>
                 </div>
@@ -16,7 +17,7 @@ return(
         </div>
     </div>
 {/* <!--/ bradcam_area  --> */}
-<CategoriesCart/>
+<CategoryList />
 
 
             
