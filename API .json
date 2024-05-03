@@ -1,0 +1,465 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "SA2 ",
+    "collectionId": "fe415581-4026-4ad9-bddf-1b1ea39c84ed",
+    "dateExported": "2024-05-02T18:34:50.261Z",
+    "version": "1.2",
+    "folders": [
+        {
+            "_id": "0704038e-3a0c-49a2-8a43-bde05a5846b7",
+            "name": "Categorey",
+            "containerId": "",
+            "created": "2024-05-02T13:39:58.326Z",
+            "sortNum": 10000
+        },
+        {
+            "_id": "fd742952-a70b-4b3d-ba92-014d62dd732f",
+            "name": "job",
+            "containerId": "",
+            "created": "2024-05-02T17:53:46.362Z",
+            "sortNum": 20000
+        },
+        {
+            "_id": "cb3b7c6a-39a8-4b6c-956a-029dc9cf59bd",
+            "name": "Auth",
+            "containerId": "",
+            "created": "2024-05-02T18:13:52.268Z",
+            "sortNum": 25000
+        },
+        {
+            "_id": "1688e847-d8f8-4c23-967f-7845c0ae6c81",
+            "name": "Application",
+            "containerId": "",
+            "created": "2024-05-02T18:03:02.684Z",
+            "sortNum": 30000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "1bc663b9-901b-4442-8de1-75fc0bb75d6d",
+            "colId": "fe415581-4026-4ad9-bddf-1b1ea39c84ed",
+            "containerId": "0704038e-3a0c-49a2-8a43-bde05a5846b7",
+            "name": "check",
+            "url": "http://localhost:5000/api/category",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2024-05-02T13:40:11.968Z",
+            "modified": "2024-05-02T13:42:29.172Z",
+            "headers": []
+        },
+        {
+            "_id": "5e5b53e3-f321-4867-959e-d566c8cd9a68",
+            "colId": "fe415581-4026-4ad9-bddf-1b1ea39c84ed",
+            "containerId": "fd742952-a70b-4b3d-ba92-014d62dd732f",
+            "name": "check",
+            "url": "http://localhost:5001/api/job",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2024-05-02T17:53:46.362Z",
+            "modified": "2024-05-02T17:55:14.366Z",
+            "headers": []
+        },
+        {
+            "_id": "13c16873-76d0-4de6-b295-5634e94817ef",
+            "colId": "fe415581-4026-4ad9-bddf-1b1ea39c84ed",
+            "containerId": "1688e847-d8f8-4c23-967f-7845c0ae6c81",
+            "name": "check",
+            "url": "http://localhost:5003/api/application",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2024-05-02T18:03:02.684Z",
+            "modified": "2024-05-02T18:06:30.561Z",
+            "headers": []
+        },
+        {
+            "_id": "0a3e6c3b-b744-4c18-96b1-45dfaecb5c07",
+            "colId": "fe415581-4026-4ad9-bddf-1b1ea39c84ed",
+            "containerId": "cb3b7c6a-39a8-4b6c-956a-029dc9cf59bd",
+            "name": "Login",
+            "url": "http://127.0.0.1:8000/users/auth/login/",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-05-02T18:13:52.276Z",
+            "modified": "2024-05-02T18:14:35.774Z",
+            "headers": [],
+            "body": {
+                "type": "formdata",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "username",
+                        "value": "new_user_12"
+                    },
+                    {
+                        "name": "password",
+                        "value": "Django123"
+                    }
+                ]
+            }
+        },
+        {
+            "_id": "3008e223-3ac8-4727-b93d-9954fc073a6a",
+            "colId": "fe415581-4026-4ad9-bddf-1b1ea39c84ed",
+            "containerId": "0704038e-3a0c-49a2-8a43-bde05a5846b7",
+            "name": "get all",
+            "url": "http://localhost:5000/api/category/allCategories",
+            "method": "GET",
+            "sortNum": 15000,
+            "created": "2024-05-02T14:50:05.601Z",
+            "modified": "2024-05-02T14:50:26.473Z",
+            "headers": []
+        },
+        {
+            "_id": "9a753841-79c3-43b6-b19d-b41eaa3edac5",
+            "colId": "fe415581-4026-4ad9-bddf-1b1ea39c84ed",
+            "containerId": "fd742952-a70b-4b3d-ba92-014d62dd732f",
+            "name": "get all",
+            "url": "http://localhost:5001/api/job/allJobs",
+            "method": "GET",
+            "sortNum": 15000,
+            "created": "2024-05-02T17:53:46.363Z",
+            "modified": "2024-05-02T17:56:04.662Z",
+            "headers": []
+        },
+        {
+            "_id": "d6bfd6d3-9033-4dfb-9831-537edc6dbca2",
+            "colId": "fe415581-4026-4ad9-bddf-1b1ea39c84ed",
+            "containerId": "1688e847-d8f8-4c23-967f-7845c0ae6c81",
+            "name": "get all",
+            "url": "http://localhost:5003/api/application/allApplications",
+            "method": "GET",
+            "sortNum": 15000,
+            "created": "2024-05-02T18:03:02.685Z",
+            "modified": "2024-05-02T18:09:02.258Z",
+            "headers": []
+        },
+        {
+            "_id": "824a81cd-9145-48ba-bfbb-379d3c6d87f3",
+            "colId": "fe415581-4026-4ad9-bddf-1b1ea39c84ed",
+            "containerId": "0704038e-3a0c-49a2-8a43-bde05a5846b7",
+            "name": "Create Category ",
+            "url": "http://localhost:5000/api/category",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2024-05-02T13:41:08.379Z",
+            "modified": "2024-05-02T15:10:59.810Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\":\"jj\", \n  \"description\" : \"description of this category is to simple\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "927ee79b-eeba-4dc5-adde-c641e2915f9c",
+            "colId": "fe415581-4026-4ad9-bddf-1b1ea39c84ed",
+            "containerId": "fd742952-a70b-4b3d-ba92-014d62dd732f",
+            "name": "Create",
+            "url": "http://localhost:5001/api/job",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2024-05-02T17:53:46.364Z",
+            "modified": "2024-05-02T18:24:31.901Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n\"title\": \"c++ dev\",\n\"job_type\": \"full time\",\n\"salary\": 3000,\n\"location\":\"cairo\",\n\"qualifications\": \"to be good at c#\",\n\"vacancy\": 1\n\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "7a4a450a-2ce8-4bb9-b1fe-6648c4b60173",
+            "colId": "fe415581-4026-4ad9-bddf-1b1ea39c84ed",
+            "containerId": "1688e847-d8f8-4c23-967f-7845c0ae6c81",
+            "name": "Create",
+            "url": "http://localhost:5003/api/application",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2024-05-02T18:03:02.686Z",
+            "modified": "2024-05-02T18:31:40.531Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n \"userId\":\"3\" ,\n\"jobId\":\"3\" ,\n\"emial\" : \"nourhantarek@gmail.com\",\n\"name\" :\"NOurhan\"\n\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "7bac7090-668d-4fec-92b2-2b805f5195cb",
+            "colId": "fe415581-4026-4ad9-bddf-1b1ea39c84ed",
+            "containerId": "cb3b7c6a-39a8-4b6c-956a-029dc9cf59bd",
+            "name": "Token Refresh",
+            "url": "http://127.0.0.1:8000/users/auth/token/refresh/",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2024-05-02T18:13:52.276Z",
+            "modified": "2024-05-02T18:13:52.276Z",
+            "headers": [],
+            "body": {
+                "form": [
+                    {
+                        "name": "refresh",
+                        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTcxMzQ1NDI5OSwiaWF0IjoxNzEzNDU0MjM5LCJqdGkiOiJjMzM1OGIzMTdlZjY0OTRmODJjZjdjODg5NTBmMDc0ZSIsInVzZXJfaWQiOjM2LCJlbWFpbCI6Im5ld191c2VyXzEyQGdtYWlsLmNvbSJ9.I4h0GImS3-oAZ-jq48sMOLRkQC7ml6ShZcOtdIcxeT4"
+                    }
+                ],
+                "files": [],
+                "type": "formdata"
+            }
+        },
+        {
+            "_id": "b964322a-0903-4d88-869c-d6d6f1c655ce",
+            "colId": "fe415581-4026-4ad9-bddf-1b1ea39c84ed",
+            "containerId": "0704038e-3a0c-49a2-8a43-bde05a5846b7",
+            "name": "get one Category",
+            "url": "http://localhost:5000/api/category/66339aef7f7ed38769dacd5c",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2024-05-02T13:41:28.174Z",
+            "modified": "2024-05-02T14:02:30.607Z",
+            "headers": []
+        },
+        {
+            "_id": "553e803b-6b1f-4e57-8e39-b0957e4d2809",
+            "colId": "fe415581-4026-4ad9-bddf-1b1ea39c84ed",
+            "containerId": "fd742952-a70b-4b3d-ba92-014d62dd732f",
+            "name": "get one ",
+            "url": "http://localhost:5001/api/job/6633d4aa078a52001f23ddf7",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2024-05-02T17:53:46.365Z",
+            "modified": "2024-05-02T18:27:49.966Z",
+            "headers": []
+        },
+        {
+            "_id": "ee97b678-1a70-47d5-ac3f-c578d028abaf",
+            "colId": "fe415581-4026-4ad9-bddf-1b1ea39c84ed",
+            "containerId": "1688e847-d8f8-4c23-967f-7845c0ae6c81",
+            "name": "get one ",
+            "url": "http://localhost:5003/api/application/6633d6aad2685e002a00373d",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2024-05-02T18:03:02.687Z",
+            "modified": "2024-05-02T18:09:25.591Z",
+            "headers": []
+        },
+        {
+            "_id": "a1077306-8bdc-4051-8718-9ab865463d86",
+            "colId": "fe415581-4026-4ad9-bddf-1b1ea39c84ed",
+            "containerId": "cb3b7c6a-39a8-4b6c-956a-029dc9cf59bd",
+            "name": "Logout",
+            "url": "http://127.0.0.1:8000/users/auth/logout/",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2024-05-02T18:13:52.276Z",
+            "modified": "2024-05-02T18:13:52.276Z",
+            "headers": [],
+            "body": {
+                "form": [
+                    {
+                        "name": "refresh",
+                        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTcxMzQ1NjQwOSwiaWF0IjoxNzEzNDU2MzQ5LCJqdGkiOiI0ZGI2MDk4OGNkN2Y0ZjJlOWY5YmZjN2QxYTQyNmE5OCIsInVzZXJfaWQiOjM2LCJlbWFpbCI6Im5ld191c2VyXzEyQGdtYWlsLmNvbSJ9.RN4A8pUYSvcQMxhKvaEx31AMiJq9wDfL0ole9GCBdn"
+                    }
+                ],
+                "files": [],
+                "type": "formdata"
+            }
+        },
+        {
+            "_id": "e5ea695b-1a08-4e2a-b699-77bd0cb2a25d",
+            "colId": "fe415581-4026-4ad9-bddf-1b1ea39c84ed",
+            "containerId": "0704038e-3a0c-49a2-8a43-bde05a5846b7",
+            "name": "update one Category",
+            "url": "http://localhost:5000/api/category/66339aef7f7ed38769dacd5c",
+            "method": "PUT",
+            "sortNum": 40000,
+            "created": "2024-05-02T13:42:10.352Z",
+            "modified": "2024-05-02T13:59:13.943Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\":\"Technology\", \n  \"description\" : \"Software Engineering, Data Science, Cybersecurity, Web Development, DevOps, etc.\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "b0f84565-24da-4567-9e28-b2fb9b317f99",
+            "colId": "fe415581-4026-4ad9-bddf-1b1ea39c84ed",
+            "containerId": "fd742952-a70b-4b3d-ba92-014d62dd732f",
+            "name": "update ",
+            "url": "http://localhost:5001/api/job/6633d4aa078a52001f23ddf7",
+            "method": "PUT",
+            "sortNum": 40000,
+            "created": "2024-05-02T17:53:46.366Z",
+            "modified": "2024-05-02T18:29:37.469Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"description\": \"good at c#\",\n    \"vacancy\": \"1\",\n   \n    \"title\": \".net dev\",\n    \"job_type\": \"full time\",\n    \"salary\": 3000,\n    \"location\": \"cairo\",\n    \"qualifications\": \"to be good at c#\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "98b91a1d-3510-4b5f-a1a1-ee26ebe0e4f7",
+            "colId": "fe415581-4026-4ad9-bddf-1b1ea39c84ed",
+            "containerId": "cb3b7c6a-39a8-4b6c-956a-029dc9cf59bd",
+            "name": "Signup",
+            "url": "http://127.0.0.1:8000/users/auth/signup/",
+            "method": "POST",
+            "sortNum": 40000,
+            "created": "2024-05-02T18:13:52.276Z",
+            "modified": "2024-05-02T18:14:43.204Z",
+            "headers": [],
+            "body": {
+                "type": "formdata",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "username",
+                        "value": "new_user_14"
+                    },
+                    {
+                        "name": "password",
+                        "value": "Django123"
+                    },
+                    {
+                        "name": "password2",
+                        "value": "Django123"
+                    },
+                    {
+                        "name": "email",
+                        "value": "mahmoudhaney14@icloud.com"
+                    },
+                    {
+                        "name": "first_name",
+                        "value": "Mahmoud"
+                    },
+                    {
+                        "name": "last_name",
+                        "value": "Haney"
+                    },
+                    {
+                        "name": "phone_number",
+                        "value": "01158981944"
+                    },
+                    {
+                        "name": "address",
+                        "value": ",4 street, owsim - embabah, Cairo_egypt ()"
+                    },
+                    {
+                        "name": "id_proof_number",
+                        "value": "30201012119283"
+                    }
+                ]
+            }
+        },
+        {
+            "_id": "1f1c869a-f09a-480e-b798-136983af6a49",
+            "colId": "fe415581-4026-4ad9-bddf-1b1ea39c84ed",
+            "containerId": "0704038e-3a0c-49a2-8a43-bde05a5846b7",
+            "name": "Delete one Category",
+            "url": "http://localhost:5000/api/category/66339cb4bb4ec5e2f3dede2b",
+            "method": "DELETE",
+            "sortNum": 50000,
+            "created": "2024-05-02T13:59:45.125Z",
+            "modified": "2024-05-02T14:02:11.228Z",
+            "headers": []
+        },
+        {
+            "_id": "c7a5544b-b35b-4d57-8940-f3ebbe6e9f26",
+            "colId": "fe415581-4026-4ad9-bddf-1b1ea39c84ed",
+            "containerId": "fd742952-a70b-4b3d-ba92-014d62dd732f",
+            "name": "Delete one Category",
+            "url": "http://localhost:5001/api/job/6633d4c4078a52001f23ddf8",
+            "method": "DELETE",
+            "sortNum": 50000,
+            "created": "2024-05-02T17:53:46.367Z",
+            "modified": "2024-05-02T18:02:44.133Z",
+            "headers": []
+        },
+        {
+            "_id": "7ee689bb-80b2-43e4-bda6-b36c1e57be62",
+            "colId": "fe415581-4026-4ad9-bddf-1b1ea39c84ed",
+            "containerId": "cb3b7c6a-39a8-4b6c-956a-029dc9cf59bd",
+            "name": "Change Password",
+            "url": "http://127.0.0.1:8000/users/auth/password/change/",
+            "method": "PUT",
+            "sortNum": 50000,
+            "created": "2024-05-02T18:13:52.276Z",
+            "modified": "2024-05-02T18:13:52.276Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ0OTc4MTUwLCJpYXQiOjE3MTM0NDIxNTAsImp0aSI6IjMzOTIyYTc3NmEwODQ3N2U5NmRmZmM0NTc5NzQyYTQyIiwidXNlcl9pZCI6MzUsImVtYWlsIjoibmV3X3VzZXJfMTFAZ21haWwuY29tIn0.umL2-_I7ryn3UA0qWnWYkXxAGq3LULQoYT-jYGzsxSU"
+                }
+            ],
+            "body": {
+                "form": [
+                    {
+                        "name": "old_password",
+                        "value": "Django123"
+                    },
+                    {
+                        "name": "new_password",
+                        "value": "Django1234"
+                    },
+                    {
+                        "name": "new_password2",
+                        "value": "Django1234"
+                    }
+                ],
+                "files": [],
+                "type": "formdata"
+            }
+        },
+        {
+            "_id": "c4c2b68f-a806-4e9b-9df8-cfac5d8fe200",
+            "colId": "fe415581-4026-4ad9-bddf-1b1ea39c84ed",
+            "containerId": "cb3b7c6a-39a8-4b6c-956a-029dc9cf59bd",
+            "name": "Reset Password Request",
+            "url": "http://127.0.0.1:8000/users/auth/password/reset/",
+            "method": "POST",
+            "sortNum": 60000,
+            "created": "2024-05-02T18:13:52.276Z",
+            "modified": "2024-05-02T18:13:52.276Z",
+            "headers": [],
+            "body": {
+                "form": [
+                    {
+                        "name": "email",
+                        "value": "mahmoudhaney@icloud.com"
+                    }
+                ],
+                "files": [],
+                "type": "formdata"
+            }
+        },
+        {
+            "_id": "528856b4-08b7-40b8-87ed-42c381857236",
+            "colId": "fe415581-4026-4ad9-bddf-1b1ea39c84ed",
+            "containerId": "cb3b7c6a-39a8-4b6c-956a-029dc9cf59bd",
+            "name": "Reset Password Confirm",
+            "url": "http://127.0.0.1:8000/users/auth/password/reset/confirm/",
+            "method": "POST",
+            "sortNum": 70000,
+            "created": "2024-05-02T18:13:52.276Z",
+            "modified": "2024-05-02T18:13:52.276Z",
+            "headers": [],
+            "body": {
+                "form": [
+                    {
+                        "name": "password",
+                        "value": "Django321",
+                        "isDisabled": true
+                    },
+                    {
+                        "name": "token",
+                        "value": "6ba013b834695269269f3313e7b37504f2a2fe8a890c879d",
+                        "isDisabled": true
+                    }
+                ],
+                "type": "formencoded"
+            }
+        }
+    ],
+    "ref": "8_meFErCcCVC3N24trR06LVhui09Ez383UZoD35HkKWR7IS632-uh8rFZlbNT1bZfx63PrZ8Al31_8xtjePXvg"
+}
