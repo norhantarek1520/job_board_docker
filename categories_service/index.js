@@ -18,10 +18,7 @@ app.use(bodyParser.json());
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
 app.use('/api/category', require('./routes/category-router'));
-// app.all('*', (req, res, next) => {
-//     next(new ApiError(`Can't find this route: ${req.originalUrl}`, 400)); // Use new keyword
-// });
-// Global error handling middleware for express
+
 app.use(globalError);
 
 
