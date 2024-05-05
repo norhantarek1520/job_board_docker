@@ -20,7 +20,9 @@ return(
                             <h5 className="wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".2s">4536+ Jobs listed</h5>
                             <h3 className="wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".3s">Find your Dream Job</h3>
                             <p className="wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".4s">We provide online instant cash loans with quick approval that suit your term length</p>
-                           
+                            <div class="sldier_btn wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".5s">
+                                 <a href="/JobsArea" class="boxed-btn3">Find Your Job</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -34,7 +36,7 @@ return(
      {/* <!-- popular_catagory_area_start  --> */}
    {/* <CategoriesCart/> */}
     {/* <!-- popular_catagory_area_end  --> */}
-    <CategoryList />
+    {/* <CategoryList /> */}
 
      {/* <!-- job_listing_area_start  --> */}
      <div className="job_listing_area">

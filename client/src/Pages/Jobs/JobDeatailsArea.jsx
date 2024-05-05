@@ -2,6 +2,7 @@ import React from "react";
 
 function JobDeatailsArea(){
 return(
+    
 <div>
 {/* <!-- bradcam_area  --> */}
 <div className="bradcam_area bradcam_bg_1">

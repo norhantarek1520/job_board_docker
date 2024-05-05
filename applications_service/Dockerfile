@@ -1,12 +1,11 @@
 FROM node:14-slim
 
-RUN npm install -g nodemon
-
 WORKDIR /app
 
 COPY ./package.json ./
 COPY ./yarn.lock ./
 
+RUN npm install 
 RUN yarn install
 
 COPY . .

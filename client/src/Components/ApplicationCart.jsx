@@ -1,9 +1,14 @@
-import React, { useState } from 'react'; // Import useState for handling form state
+import React, { useState } from 'react';
+import axios from 'axios';
+
 
 function ApplicationCart() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    portfolio: '',
+    jobId: '', 
+    userId :''
   });
 
   const handleChange = (event) => {
@@ -11,46 +16,34 @@ function ApplicationCart() {
   };
 
   const handleSubmit = async (event) => {
-    event.preventDefault(); // Prevent default form submission
+    event.preventDefault();
 
-    // Validation (optional): Add checks for empty fields, email format, etc.
-    // if (!formData.name || !formData.email.trim().match(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/)) {
-    //   alert('Please enter a valid name and email address.');
-    //   return;
-    // }
-
-    // Handle form submission (consider using a library like Axios)
     try {
-      const response = await fetch('/apply/', {
-        method: 'POST',
-        body: JSON.stringify(formData), // Assuming backend accepts JSON data
+      const response = await axios.post('http://localhost:5003/api/application', formData, {
         headers: { 'Content-Type': 'application/json' },
       });
 
-      if (response.ok) {
+      if (response.status = 201) {
         alert('Application submitted successfully!');
-        // Clear form data after successful submission (optional)
-        setFormData({ name: '', email: '' });
+        setFormData({ name: '', email: '', portfolio: '', jobId: '',  userId :'' }); // Clear form data after success (optional)
       } else {
         alert('There was an error submitting your application. Please try again later.');
       }
     } catch (error) {
       console.error('Error submitting application:', error);
-      alert('An unexpected error occurred. Please try again later.');
+      window.alert('Server problem in Application server . Please try again later.');
     }
   };
 
   return (
-<div>
-   
-    <div style={{  textAlign: 'center' ,padding: "8rem",border: "1px solid black",margin: "8rem",flex: '1',}}>
-      <div className="apply_job_form white-bg">
-        <h4>Apply for the Job</h4>
+    <div>
+      <div className="apply_job_form white-bg" style={{ border: '1px solid black' , padding:"2rem"}}>
+        <h4>Apply for the job</h4>
         <form onSubmit={handleSubmit}>
           <div className="row">
             <div className="col-md-6">
               <div className="input_field">
-                <label htmlFor="name">Your Name</label>  {/* Add labels for accessibility */}
+                <label htmlFor="name">Your Name</label>
                 <input
                   type="text"
                   placeholder="Your name"
@@ -58,13 +51,13 @@ function ApplicationCart() {
                   id="name"
                   value={formData.name}
                   onChange={handleChange}
-                  required  
+                  required
                 />
               </div>
             </div>
             <div className="col-md-6">
               <div className="input_field">
-                <label htmlFor="email">Email</label>  {/* Add label for accessibility */}
+                <label htmlFor="email">Email</label>
                 <input
                   type="email"
                   placeholder="Email"
@@ -72,11 +65,50 @@ function ApplicationCart() {
                   id="email"
                   value={formData.email}
                   onChange={handleChange}
-                  required 
+                  required
                 />
               </div>
             </div>
-
+            <div className="col-md-12">
+              <div className="input_field">
+                <label htmlFor="portfolio">Portfolio Link</label>
+                <input
+                  type="text"
+                  placeholder="Website/Portfolio link"
+                  name="portfolio"
+                  id="portfolio"
+                  value={formData.portfolio}
+                  onChange={handleChange}
+                />
+              </div>
+            </div>
+            <div className="col-md-12">
+              <div className="input_field">
+                <label htmlFor="jobId">jobId</label>
+                <input
+                  type="text"
+                  placeholder="jobId"
+                  name="jobId"
+                  id="jobId"
+                  value={formData.jobId}
+                  onChange={handleChange}
+                />
+              </div>
+            </div>
+            <div className="col-md-12">
+              <div className="input_field">
+                <label htmlFor="userId">userId</label>
+                <input
+                  type="text"
+                  placeholder="userId"
+                  name="userId"
+                  id="userId"
+                  value={formData.userId}
+                  onChange={handleChange}
+                />
+              </div>
+            </div>
+         
             <div className="col-md-12">
               <div className="submit_btn">
                 <button className="boxed-btn3 w-100" type="submit">
@@ -88,8 +120,6 @@ function ApplicationCart() {
         </form>
       </div>
     </div>
-
-</div>
   );
 }
 

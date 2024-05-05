@@ -1,6 +1,39 @@
-import React from "react";
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
-function Login(){
+function Login() {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState(null);
+  const navigate = useNavigate();
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    try {
+      const response = await axios.post('http://127.0.0.1:8000/users/auth/login/', {
+        username,
+        password,
+      });
+
+      if (response.status === 201) { // Assuming successful login response has a 'success' property
+        const { refresh, access } = response.data; // Destructure tokens
+
+        // Store tokens securely (replace localStorage with a more secure option)
+        localStorage.setItem('refreshToken', refresh);
+        localStorage.setItem('accessToken', access);
+
+        // Redirect to the home page after successful login
+        navigate('/');
+      } else {
+        setError('Invalid username or password');
+      }
+    } catch (error) {
+      console.error('Error logging in:', error);
+      setError('An unexpected error occurred. Please try again later.');
+    }
+  };
 return(
 <div>
 
@@ -26,12 +59,13 @@ return(
                             <div className="card-body p-5">
                                 <h2 className="text-uppercase text-center mb-5">Login With an account</h2>
 
-                                <form action="/login" method="post">
+                                <form onSubmit={handleSubmit}>
 
+                                 
                                     <div className="form-outline mb-4">
-                                        <input type="email" id="form3Example3cg"
-                                            className="form-control form-control-lg" name="email" />
-                                        <label className="form-label" for="form3Example3cg">Your Email</label>
+                                        <input type="text" id="form3Example3cg"
+                                            className="form-control form-control-lg" name="userName" />
+                                        <label className="form-label" for="form3Example3cg">Your user Name</label>
                                     </div>
 
                                     <div className="form-outline mb-4">
@@ -46,9 +80,10 @@ return(
                                     </div>
 
                                     <p className="text-center text-muted mt-5 mb-0">Create new account? <a
-                                            href="/Signup" className="fw-bold text-body"><u>sign up
+                                            href="/#" className="fw-bold text-body"><u>sign up
                                                 here</u></a></p>
 
+                                                {error && <p>{error}</p>}
                                 </form>
 
                             </div>
@@ -62,5 +97,6 @@ return(
   
 </div>)
 }
+
 
 export default Login 

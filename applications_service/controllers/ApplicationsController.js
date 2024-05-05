@@ -6,7 +6,10 @@ class ApplicationsController{
     try {
       const application = await Applications.create({
         jobId: req.body.jobId, 
-        userId : req.body.userId
+        userId : req.body.userId,
+        name :req.body.name,
+        emial: req.body.emial 
+
         })
         res.status(201).json(application);
       } catch (err) {

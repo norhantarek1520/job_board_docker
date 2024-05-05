@@ -7,6 +7,7 @@ const Applications = new Schema(
         jobId: { type: String, required: true },
         emial : {type : String},
         name :{type :String},
+        portfolio :{type :String},
         status: {
             type: String,
             required: true,

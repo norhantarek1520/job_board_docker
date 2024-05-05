@@ -1,21 +1,21 @@
 version: "3"
 
 services:
-# # ##==================================================jobs=============================================================================
   jobs_db:
     image: mongo:3.6.19-xenial
     container_name: jobs_db
-
-    networks:
-      - jobboard-app
     volumes:
       - job-data:/data/db
- 
+    networks:
+      - jobboard-app
   jobs_service:
     build: ./jobs_service
     container_name: jobs_service_container
     ports:
       - "5001:5001"
+    volumes:
+      - ./jobs_service:/app
+      - /app/node_modules  # Assuming Node.js application
     networks:
       - jobboard-app
     links:
@@ -23,38 +23,36 @@ services:
     restart: on-failure
     depends_on:
       - jobs_db
-    volumes:
-      - ./jobs_service:/app
-      - /app/node_modules  # Assuming Node.js application
-
-##================================================recommend_service =================================================================
+   
   
   recommend_service:
     build: ./recommend_service
     container_name: recommend_service_container
     ports:
       - "6004:6004"
-    networks:
-      - jobboard-app
     volumes:
       - ./recommend_service:/app
       - /app/node_modules
+    networks:
+      - jobboard-app
 
-# ##==================================================applications=====================================================================
+
   applications_db:
     image: mongo:3.6.19-xenial
     container_name: applications_db
-
-    networks:
-      - jobboard-app
     volumes:
       - applications-data:/data/db
+    networks:
+      - jobboard-app
 
   applications_service:
     build: ./applications_service
     container_name: applications_service_container
     ports:
       - "5003:5003"
+    volumes:
+      - ./applications_service:/app
+      - /app/node_modules  # Assuming Node.js application
     networks:
       - jobboard-app
     links:
@@ -62,24 +60,24 @@ services:
     restart: on-failure
     depends_on:
       - applications_db
-    volumes:
-      - ./applications_service:/app
-      - /app/node_modules  # Assuming Node.js application
 
-##==================================================companies_service=======================================================================
+
   companies_db:
     image: mongo:3.6.19-xenial
     container_name: companies_db
-    networks:
-      - jobboard-app
     volumes:
       - companies-data:/data/db
-
+    networks:
+      - jobboard-app
+   
   companies_service:
     build: ./companies_service
     container_name: companies_service_container
     ports:
       - "4000:4000"
+    volumes:
+      - ./companies_service:/app
+      - /app/node_modules  
     networks:
       - jobboard-app
     links:
@@ -87,11 +85,7 @@ services:
     restart: on-failure
     depends_on:
       - companies_db
-    volumes:
-      - ./companies_service:/app
-      - /app/node_modules  # Assuming Node.js application
 
-##==================================================client=====================================================================
   
   client:
     build: ./client
@@ -99,13 +93,14 @@ services:
     stdin_open: true
     ports:
       - "3000:3000"
-    networks:
-      - jobboard-app
     volumes:
       - ./client:/app
       - /app/node_modules
-
-##==================================================categories=======================================================================
+    networks:
+      - jobboard-app
+    environment:
+      - WATCHPACK_POLLING=true
+  
   categories_db:
     image: mongo:3.6.19-xenial
     container_name: categories_db
@@ -113,53 +108,60 @@ services:
       - jobboard-app
     volumes:
       - category-data:/data/db
-
   categories_service:
     build: ./categories_service
     container_name: categories_service_container
     ports:
       - "5000:5000"
+    volumes:
+      - ./categories_service:/app
+      - /app/node_modules  # Assuming Node.js application
     networks:
       - jobboard-app
     links:
       - categories_db
-    restart: on-failure
+    restart: always
     depends_on:
       - categories_db
+
+  postgres:
+    container_name: drf-postgres
+    image: postgres:16.2
+    restart: always
+    ports:
+      - "5432:5432"
     volumes:
-      - ./categories_service:/app
-      - /app/node_modules  # Assuming Node.js application
+      - postgres_dev_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: developmentpassword
+      POSTGRES_DB: developmentdb
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "postgres", "-d", "developmentdb"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
-
-#================================================users ============================================================================
-  # postgres:
-  #   volumes:
-  #     - postgres_dev_data:/var/lib/postgresql/data
-  #   environment:
-  #     POSTGRES_PASSWORD: developmentpassword
-  #     POSTGRES_DB: developmentdb
-  #   healthcheck:
-  #     test: ["CMD", "pg_isready", "-U", "postgres", "-d", "developmentdb"]
-  
-  # drf-app:
-  #   container_name: dev-drf-running-app
-  #   build: 
-  #     target: development
-  #   volumes:
-  #     - ./VotingSystem:/app
-  #   ports:
-  #     - "8000:8000"
-  #   command: bash -c "python manage.py makemigrations --settings=VotingSystem.settings.development && python manage.py migrate --settings=VotingSystem.settings.development && python manage.py runserver 0.0.0.0:8000 --settings=VotingSystem.settings.development"
-
-##_____________________________________________________ (*_*) ___________________________________________________
+  drf-app:
+    container_name: users_service
+    build: ./users_service/.
+    volumes:
+      - ./users_service/VotingSystem:/app
+    ports:
+      - "8000:8000"
+    command: bash -c "python manage.py makemigrations --settings=VotingSystem.settings.development && python manage.py migrate --settings=VotingSystem.settings.development && python manage.py runserver 0.0.0.0:8000 --settings=VotingSystem.settings.development"   
+    env_file:
+      - ./users_service/.env
+    depends_on:
+      postgres:
+        condition: service_healthy
 
 networks:
   jobboard-app:
-    driver: bridge  # Change to 'overlay' if needed
+    driver: bridge  
 
 volumes:
   category-data:
   job-data:
   applications-data:
   companies-data:
-  # postgres_dev_data:
+  postgres_dev_data:

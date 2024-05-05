@@ -2,7 +2,7 @@
     "clientName": "Thunder Client",
     "collectionName": "SA2 ",
     "collectionId": "fe415581-4026-4ad9-bddf-1b1ea39c84ed",
-    "dateExported": "2024-05-02T18:34:50.261Z",
+    "dateExported": "2024-05-05T10:51:42.447Z",
     "version": "1.2",
     "folders": [
         {
@@ -11,6 +11,13 @@
             "containerId": "",
             "created": "2024-05-02T13:39:58.326Z",
             "sortNum": 10000
+        },
+        {
+            "_id": "5f663ded-9f66-4930-b49e-3066b8903574",
+            "name": "companies",
+            "containerId": "",
+            "created": "2024-05-03T10:01:36.564Z",
+            "sortNum": 15000
         },
         {
             "_id": "fd742952-a70b-4b3d-ba92-014d62dd732f",
@@ -25,6 +32,13 @@
             "containerId": "",
             "created": "2024-05-02T18:13:52.268Z",
             "sortNum": 25000
+        },
+        {
+            "_id": "c84c9c55-87f5-447e-85dd-8aef1a4c2c85",
+            "name": "Users",
+            "containerId": "",
+            "created": "2024-05-05T07:03:20.700Z",
+            "sortNum": 27500
         },
         {
             "_id": "1688e847-d8f8-4c23-967f-7845c0ae6c81",
@@ -98,6 +112,18 @@
             }
         },
         {
+            "_id": "0d7dc711-6350-48a1-9333-88eb57aa2574",
+            "colId": "fe415581-4026-4ad9-bddf-1b1ea39c84ed",
+            "containerId": "5f663ded-9f66-4930-b49e-3066b8903574",
+            "name": "check",
+            "url": "http://localhost:4000/api/companies",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2024-05-03T10:01:36.564Z",
+            "modified": "2024-05-04T18:27:08.928Z",
+            "headers": []
+        },
+        {
             "_id": "3008e223-3ac8-4727-b93d-9954fc073a6a",
             "colId": "fe415581-4026-4ad9-bddf-1b1ea39c84ed",
             "containerId": "0704038e-3a0c-49a2-8a43-bde05a5846b7",
@@ -134,6 +160,18 @@
             "headers": []
         },
         {
+            "_id": "c991cbcf-5198-4b3c-86b8-4cd60e04e04a",
+            "colId": "fe415581-4026-4ad9-bddf-1b1ea39c84ed",
+            "containerId": "5f663ded-9f66-4930-b49e-3066b8903574",
+            "name": "get all",
+            "url": "http://localhost:4000/api/companies/all",
+            "method": "GET",
+            "sortNum": 15000,
+            "created": "2024-05-03T10:01:36.565Z",
+            "modified": "2024-05-04T14:31:05.694Z",
+            "headers": []
+        },
+        {
             "_id": "824a81cd-9145-48ba-bfbb-379d3c6d87f3",
             "colId": "fe415581-4026-4ad9-bddf-1b1ea39c84ed",
             "containerId": "0704038e-3a0c-49a2-8a43-bde05a5846b7",
@@ -142,11 +180,11 @@
             "method": "POST",
             "sortNum": 20000,
             "created": "2024-05-02T13:41:08.379Z",
-            "modified": "2024-05-02T15:10:59.810Z",
+            "modified": "2024-05-04T18:37:11.941Z",
             "headers": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"name\":\"jj\", \n  \"description\" : \"description of this category is to simple\"\n}",
+                "raw": "{\n \"name\":\"Human Resources\", \n  \"description\" : \"This category would include jobs related to talent acquisition, recruitment, employee relations, and benefits administration\"\n}",
                 "form": []
             }
         },
@@ -159,11 +197,11 @@
             "method": "POST",
             "sortNum": 20000,
             "created": "2024-05-02T17:53:46.364Z",
-            "modified": "2024-05-02T18:24:31.901Z",
+            "modified": "2024-05-03T14:41:31.632Z",
             "headers": [],
             "body": {
                 "type": "json",
-                "raw": "{\n\"title\": \"c++ dev\",\n\"job_type\": \"full time\",\n\"salary\": 3000,\n\"location\":\"cairo\",\n\"qualifications\": \"to be good at c#\",\n\"vacancy\": 1\n\n}",
+                "raw": "{\n\"title\": \"node dev\",\n\"job_type\": \"full time\",\n\"salary\": 3000,\n\"location\":\"cairo\",\n\"qualifications\": \"to be good at c#\",\n\"vacancy\": 1\n\n}",
                 "form": []
             }
         },
@@ -176,11 +214,11 @@
             "method": "POST",
             "sortNum": 20000,
             "created": "2024-05-02T18:03:02.686Z",
-            "modified": "2024-05-02T18:31:40.531Z",
+            "modified": "2024-05-03T16:38:22.161Z",
             "headers": [],
             "body": {
                 "type": "json",
-                "raw": "{\n \"userId\":\"3\" ,\n\"jobId\":\"3\" ,\n\"emial\" : \"nourhantarek@gmail.com\",\n\"name\" :\"NOurhan\"\n\n}",
+                "raw": "{\n \"userId\":\"3\" ,\n\"jobId\":\"3\" ,\n\"emial\" : \"nourhantarek@gmail.com\",\n\"name\" :\"NOurhan\" ,\n\"portfolio\" : \"NOurhan$.link\"\n\n}",
                 "form": []
             }
         },
@@ -204,6 +242,23 @@
                 ],
                 "files": [],
                 "type": "formdata"
+            }
+        },
+        {
+            "_id": "559e4863-9bc6-410d-a081-09ab83fb5060",
+            "colId": "fe415581-4026-4ad9-bddf-1b1ea39c84ed",
+            "containerId": "5f663ded-9f66-4930-b49e-3066b8903574",
+            "name": "Create",
+            "url": "http://localhost:4000/api/companies",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2024-05-03T10:01:36.566Z",
+            "modified": "2024-05-04T18:39:35.699Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\r\n  \"name\": \"3ez Company\",\r\n  \"owner\": \"El 3ez group\",\r\n  \"location\": \"New York City\" ,\r\n  \"description\" :\"for all building \"\r\n  \r\n}\r\n",
+                "form": []
             }
         },
         {
@@ -265,15 +320,27 @@
             }
         },
         {
+            "_id": "9bc739cd-a75c-48f4-aa86-f5fa6e4dcebd",
+            "colId": "fe415581-4026-4ad9-bddf-1b1ea39c84ed",
+            "containerId": "5f663ded-9f66-4930-b49e-3066b8903574",
+            "name": "get one ",
+            "url": "http://localhost:4000/api/companies/",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2024-05-03T10:01:36.567Z",
+            "modified": "2024-05-04T14:31:28.031Z",
+            "headers": []
+        },
+        {
             "_id": "e5ea695b-1a08-4e2a-b699-77bd0cb2a25d",
             "colId": "fe415581-4026-4ad9-bddf-1b1ea39c84ed",
             "containerId": "0704038e-3a0c-49a2-8a43-bde05a5846b7",
             "name": "update one Category",
-            "url": "http://localhost:5000/api/category/66339aef7f7ed38769dacd5c",
+            "url": "http://localhost:5000/api/category/66362306be4fa7411de29e13",
             "method": "PUT",
             "sortNum": 40000,
             "created": "2024-05-02T13:42:10.352Z",
-            "modified": "2024-05-02T13:59:13.943Z",
+            "modified": "2024-05-04T12:12:11.950Z",
             "headers": [],
             "body": {
                 "type": "json",
@@ -353,22 +420,39 @@
             }
         },
         {
+            "_id": "cde9152d-7e4b-44fd-a80c-428309b371a3",
+            "colId": "fe415581-4026-4ad9-bddf-1b1ea39c84ed",
+            "containerId": "5f663ded-9f66-4930-b49e-3066b8903574",
+            "name": "update one",
+            "url": "http://localhost:4000/api/companies",
+            "method": "PUT",
+            "sortNum": 40000,
+            "created": "2024-05-03T10:01:36.568Z",
+            "modified": "2024-05-04T14:31:34.093Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\":\"Technology\", \n  \"description\" : \"Software Engineering, Data Science, Cybersecurity, Web Development, DevOps, etc.\"\n}",
+                "form": []
+            }
+        },
+        {
             "_id": "1f1c869a-f09a-480e-b798-136983af6a49",
             "colId": "fe415581-4026-4ad9-bddf-1b1ea39c84ed",
             "containerId": "0704038e-3a0c-49a2-8a43-bde05a5846b7",
             "name": "Delete one Category",
-            "url": "http://localhost:5000/api/category/66339cb4bb4ec5e2f3dede2b",
+            "url": "http://localhost:5000/api/category/6636230bbe4fa7411de29e15",
             "method": "DELETE",
             "sortNum": 50000,
             "created": "2024-05-02T13:59:45.125Z",
-            "modified": "2024-05-02T14:02:11.228Z",
+            "modified": "2024-05-04T11:59:35.859Z",
             "headers": []
         },
         {
             "_id": "c7a5544b-b35b-4d57-8940-f3ebbe6e9f26",
             "colId": "fe415581-4026-4ad9-bddf-1b1ea39c84ed",
             "containerId": "fd742952-a70b-4b3d-ba92-014d62dd732f",
-            "name": "Delete one Category",
+            "name": "Delete one ",
             "url": "http://localhost:5001/api/job/6633d4c4078a52001f23ddf8",
             "method": "DELETE",
             "sortNum": 50000,
@@ -410,6 +494,18 @@
                 "files": [],
                 "type": "formdata"
             }
+        },
+        {
+            "_id": "54e96c5c-0ce9-46dd-a89d-0fcf61102f85",
+            "colId": "fe415581-4026-4ad9-bddf-1b1ea39c84ed",
+            "containerId": "5f663ded-9f66-4930-b49e-3066b8903574",
+            "name": "Delete one ",
+            "url": "http://localhost:4000/api/companies",
+            "method": "DELETE",
+            "sortNum": 50000,
+            "created": "2024-05-03T10:01:36.569Z",
+            "modified": "2024-05-04T14:31:40.378Z",
+            "headers": []
         },
         {
             "_id": "c4c2b68f-a806-4e9b-9df8-cfac5d8fe200",
@@ -459,7 +555,84 @@
                 ],
                 "type": "formencoded"
             }
+        },
+        {
+            "_id": "402c7196-0195-440a-b930-b24603c95e77",
+            "colId": "fe415581-4026-4ad9-bddf-1b1ea39c84ed",
+            "containerId": "c84c9c55-87f5-447e-85dd-8aef1a4c2c85",
+            "name": "Retrieve User Profile",
+            "url": "http://127.0.0.1:8000/users/profile/",
+            "method": "GET",
+            "sortNum": 80000,
+            "created": "2024-05-05T07:03:20.708Z",
+            "modified": "2024-05-05T07:03:20.708Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ0OTgzOTQ1LCJpYXQiOjE3MTM0NDc5NDUsImp0aSI6IjE4MTRhYzFjNjYxMjRhNzc4NmVkM2MzYWMwZDYyZTg2IiwidXNlcl9pZCI6MzYsImVtYWlsIjoibmV3X3VzZXJfMTJAZ21haWwuY29tIn0.PYJW_K715v0uBFjHYD2kOvvo2IMsz3ytfKJuFcE-gaI"
+                }
+            ]
+        },
+        {
+            "_id": "a8aacc5a-0abc-4419-87e6-9f57c3b9e619",
+            "colId": "fe415581-4026-4ad9-bddf-1b1ea39c84ed",
+            "containerId": "c84c9c55-87f5-447e-85dd-8aef1a4c2c85",
+            "name": "Update User Profile",
+            "url": "http://127.0.0.1:8000/users/profile/",
+            "method": "PUT",
+            "sortNum": 90000,
+            "created": "2024-05-05T07:03:20.708Z",
+            "modified": "2024-05-05T07:03:20.708Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ0OTgzOTQ1LCJpYXQiOjE3MTM0NDc5NDUsImp0aSI6IjE4MTRhYzFjNjYxMjRhNzc4NmVkM2MzYWMwZDYyZTg2IiwidXNlcl9pZCI6MzYsImVtYWlsIjoibmV3X3VzZXJfMTJAZ21haWwuY29tIn0.PYJW_K715v0uBFjHYD2kOvvo2IMsz3ytfKJuFcE-gaI"
+                }
+            ],
+            "body": {
+                "form": [
+                    {
+                        "name": "first_name",
+                        "value": "Mahmoud"
+                    },
+                    {
+                        "name": "last_name",
+                        "value": "Haney"
+                    },
+                    {
+                        "name": "email",
+                        "value": "new_user_12@gmail.com"
+                    },
+                    {
+                        "name": "address",
+                        "value": "Egypt"
+                    },
+                    {
+                        "name": "phone_number",
+                        "value": "01115007982"
+                    }
+                ],
+                "files": [],
+                "type": "formdata"
+            }
+        },
+        {
+            "_id": "6f932555-43e5-4a4f-aa33-91835637c660",
+            "colId": "fe415581-4026-4ad9-bddf-1b1ea39c84ed",
+            "containerId": "c84c9c55-87f5-447e-85dd-8aef1a4c2c85",
+            "name": "Delete User Profile",
+            "url": "http://127.0.0.1:8000/users/profile/",
+            "method": "DELETE",
+            "sortNum": 100000,
+            "created": "2024-05-05T07:03:20.708Z",
+            "modified": "2024-05-05T07:03:20.708Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ0OTA5ODY0LCJpYXQiOjE3MTMzNzM4NjQsImp0aSI6ImVkMzVjYTFlYjVhNzQwNjc5OWYwMWVlZTgzOWM4Mzc1IiwidXNlcl9pZCI6MjQsImVtYWlsIjoibmV3X3VzZXIxNkBleGFtcGxlLmNvbSJ9.9qlLgHhwo_R1hkZqbicSqOq9sYUcd98kDNEJs9RZbVg"
+                }
+            ]
         }
     ],
-    "ref": "8_meFErCcCVC3N24trR06LVhui09Ez383UZoD35HkKWR7IS632-uh8rFZlbNT1bZfx63PrZ8Al31_8xtjePXvg"
+    "ref": "8_meFErCcCVC3N24trR06G93GRgu4TShDBwCCZNDIUtvVyaRgkAWhC7ilEwDuDnGvFmNs8eCc9HC6c10AZv39w"
 }

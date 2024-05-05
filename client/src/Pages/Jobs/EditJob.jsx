@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios'; // Import axios
 
-function PostJob() {
+function EditJob() {
   const [formData, setFormData] = useState({
     title: '',
     job_type: '',
@@ -13,6 +13,7 @@ function PostJob() {
     deadline: '',
   });
 
+  
   const handleChange = (event) => {
     setFormData({ ...formData, [event.target.name]: event.target.value });
   };
@@ -20,13 +21,13 @@ function PostJob() {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    if (!formData.title  || !formData.location  || !formData.salary) {
+    if (!formData.title || !formData.job_type || !formData.location || !formData.vacancy || !formData.salary) {
       alert('Please fill in all required fields.');
       return;
     }
 
     try {
-      const response = await axios.post('http://localhost:5001/api/job', formData);
+      const response = await axios.put(`http://localhost:5001/api/job/${id}`, formData);
 
       if (response.status === 201) { // Assuming successful creation returns status 201
         alert('Job added successfully!');
@@ -45,8 +46,8 @@ function PostJob() {
         alert('There was an error adding the job. Please try again later.');
       }
     } catch (error) {
-      console.error('Error in job:', error);
-      alert('An unexpected error occurred. Please try again later.' );
+      console.error('Error adding job:', error);
+      alert('An unexpected error occurred. Please try again later.');
     }
   };
 
@@ -119,7 +120,7 @@ function PostJob() {
             <input
               type="number"
               className="form-control"
-              name="salary"
+              name="vacancy"
               value={formData.salary}
               onChange={handleChange}
               required
@@ -136,7 +137,17 @@ function PostJob() {
               required
             />
           </div>
-
+          <div className="form-group">
+            <label htmlFor="qualifications">qualifications</label>
+            <input
+              type="text"
+              className="form-control"
+              name="qualifications"
+              value={formData.qualifications}
+              onChange={handleChange}
+              required
+            />
+          </div>
           <div className="form-group">
             <label htmlFor="qualifications">qualifications</label>
             <input
@@ -175,6 +186,6 @@ function PostJob() {
   );
 }
 
-export default PostJob;
+export default EditJob;
 
          

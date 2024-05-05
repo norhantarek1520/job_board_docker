@@ -14,8 +14,8 @@ import JobDashboard from "./Pages/Jobs/JobDashboard";
 import PostJob from "./Pages/Jobs/PostJob";
 import Recommendation from "./Pages/Recomendation/Recommendation";
 import Login from "./Pages/Users/Login";
-import Signup from "./Pages/Users/Signup";
-import UserProfile from "./Pages/Users/UserProfile";
+
+
 
 
 function App() {
@@ -31,10 +31,10 @@ function App() {
           <Route path="/ApplicationArea" element={<ApplicationArea />} />
           <Route path="/JobDeatailsArea" element={<JobDeatailsArea />} />
           <Route path="/JobsArea" element={<JobsArea />} />
-          <Route path="/Signup" element={<Signup />} />
+         
           <Route path="/Login" element={<Login />} />
           <Route path="/Recommendation" element={<Recommendation />} />
-          <Route path="/UserProfile" element={<UserProfile />} />
+         
           <Route path="/PostJob" element={<PostJob />} />
           <Route path="/JobDashboard" element={<JobDashboard />} />
           <Route path="/CategroyDashboard" element={<CategroyDashboard />} />
