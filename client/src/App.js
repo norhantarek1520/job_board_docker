@@ -14,7 +14,7 @@ import JobDashboard from "./Pages/Jobs/JobDashboard";
 import PostJob from "./Pages/Jobs/PostJob";
 import Recommendation from "./Pages/Recomendation/Recommendation";
 import Login from "./Pages/Users/Login";
-
+import CompaniesDashboard from './Pages/Companies/CompaniesDashboard';
 
 
 
@@ -39,6 +39,7 @@ function App() {
           <Route path="/JobDashboard" element={<JobDashboard />} />
           <Route path="/CategroyDashboard" element={<CategroyDashboard />} />
           <Route path="/CompaniesArea" element={<CompaniesArea />} />
+          <Route path="/CompaniesDashboard" element={<CompaniesDashboard />} />
         </Routes>
         <Footer />
       </Router>

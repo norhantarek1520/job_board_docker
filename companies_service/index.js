@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
 const app = express();
-const port = 4000;
+const port = 8080;
 
 const companySchema = new mongoose.Schema({
   name: { type: String, required: true },
@@ -23,7 +23,7 @@ app.use(bodyParser.json());
 app.get('/api/companies/all', async (req, res) => {
   try {
     const companies = await Company.find();
-    res.json(companies);
+    res.json({"list":companies});
   } catch (error) {
     console.error(error);
     res.status(500).send('Error retrieving companies');
@@ -49,7 +49,7 @@ app.get('/api/companies/:id', async (req, res) => {
   }
 });
 app.get('/api/companies',(req, res) =>{
-    res.send('Hello World! - from category service');
+    res.send('Hello World! - from Company  service');
 })
 app.delete('/api/companies/:id' , async (req, res, next) => {
   const company = await Company.findOneAndDelete({ _id: req.params.id })

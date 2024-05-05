@@ -74,7 +74,7 @@ services:
     build: ./companies_service
     container_name: companies_service_container
     ports:
-      - "4000:4000"
+      - "8080:8080"
     volumes:
       - ./companies_service:/app
       - /app/node_modules  
@@ -86,7 +86,6 @@ services:
     depends_on:
       - companies_db
 
-  
   client:
     build: ./client
     container_name: client_container

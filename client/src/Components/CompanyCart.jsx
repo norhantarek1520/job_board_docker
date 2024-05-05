@@ -4,22 +4,15 @@ import axios from 'axios';
 
 function CompanyCart() {
   const [companies, setCompanies] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
-      setIsLoading(true);
-      setError(null);
-
       try {
         const response = await axios.get('http://localhost:4000/api/companies/all');
-        setCompanies(response.data);
+        setCompanies(response.data.list);
       } catch (error) {
-        setError(error);
-        window.alert('Server problem in Company. Please try again later.');
-      } finally {
-        setIsLoading(false);
+        console.error('Error fetching companies:', error);
+        window.alert('Server problem in companies server. Please try again later.');
       }
     };
 
@@ -28,12 +21,11 @@ function CompanyCart() {
 
   return (
     <div>
-      {isLoading && <p>Loading companies...</p>}
-      {error && <p>Error fetching companies: {error.message}</p>}
+      
       {companies.length > 0 && (
         <div className="row">
          {companies.map((company) => (
-  <div key={company.id} className="col-lg-4 col-xl-3 col-md-6">
+  <div key={company._id} className="col-lg-4 col-xl-3 col-md-6">
     <div className="single_company">
       <div className="thumb">
         <img src="img/svg_icon/5.svg" alt="" />
@@ -51,7 +43,7 @@ function CompanyCart() {
 
         </div>
       )}
-      {companies.length === 0 && !isLoading && <p>No companies found.</p>}
+      {companies.length === 0 && <p>No companies found.</p>}
     </div>
   );
 }

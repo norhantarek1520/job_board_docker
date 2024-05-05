@@ -17,7 +17,7 @@ function Login() {
         password,
       });
 
-      if (response.status === 201) { // Assuming successful login response has a 'success' property
+      if (response.status === 200) { // Assuming successful login response has a 'success' property
         const { refresh, access } = response.data; // Destructure tokens
 
         // Store tokens securely (replace localStorage with a more secure option)
