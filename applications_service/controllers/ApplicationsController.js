@@ -35,8 +35,14 @@ class ApplicationsController{
         res.status(500).json({ message: err.message });
       }
     };
-
-
+    static deleteApplication = async (req, res) => {
+      try {
+        const application = await Applications.findOneAndDelete({ _id: req.params.id })
+        res.status(204).json("Application deleted !");
+      } catch (err) {
+        res.status(500).json({ message: err.message });
+      }
+    };
   
     static checkServiceRunning(req, res) {
       res.send('Hello World! - from Applications service');

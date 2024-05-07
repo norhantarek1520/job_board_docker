@@ -1,10 +1,10 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-
+const cors = require('cors');
 const app = express();
 const port = 8080;
-
+app.use(cors());
 const companySchema = new mongoose.Schema({
   name: { type: String, required: true },
   owner: { type: String, required: true },

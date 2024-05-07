@@ -13,33 +13,31 @@ import JobsArea from "./Pages/Jobs/JobsArea";
 import JobDashboard from "./Pages/Jobs/JobDashboard";
 import PostJob from "./Pages/Jobs/PostJob";
 import Recommendation from "./Pages/Recomendation/Recommendation";
-import Login from "./Pages/Users/Login";
-import CompaniesDashboard from './Pages/Companies/CompaniesDashboard';
-
-
+import Login from './Pages/Users/Login';
 
 function App() {
   return (
     <div className="App">
-       
+
       <Router>
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
-         
+
           <Route path="/CatagoryArea" element={<CatagoryArea />} />
           <Route path="/ApplicationArea" element={<ApplicationArea />} />
           <Route path="/JobDeatailsArea" element={<JobDeatailsArea />} />
           <Route path="/JobsArea" element={<JobsArea />} />
-         
+
+        
           <Route path="/Login" element={<Login />} />
           <Route path="/Recommendation" element={<Recommendation />} />
-         
+
           <Route path="/PostJob" element={<PostJob />} />
           <Route path="/JobDashboard" element={<JobDashboard />} />
           <Route path="/CategroyDashboard" element={<CategroyDashboard />} />
           <Route path="/CompaniesArea" element={<CompaniesArea />} />
-          <Route path="/CompaniesDashboard" element={<CompaniesDashboard />} />
+
         </Routes>
         <Footer />
       </Router>

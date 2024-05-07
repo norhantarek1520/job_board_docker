@@ -1,11 +1,9 @@
 import React from "react";
 
 
-import Recommendation from './Recomendation/Recommendation';
-import ApplicationCart from "../Components/ApplicationCart";
-// import CategoriesCart from '../Components/CategoriesCart'
 import JobCart from '../Components/JobCart'
 import CategoryList from '../Components/CategoryList'
+import CompanyCart from '../Components/CompanyCart'
 
 function Home(){
 return(
@@ -34,9 +32,9 @@ return(
     </div>
 
      {/* <!-- popular_catagory_area_start  --> */}
-   {/* <CategoriesCart/> */}
+   <CategoryList />
     {/* <!-- popular_catagory_area_end  --> */}
-    {/* <CategoryList /> */}
+   
 
      {/* <!-- job_listing_area_start  --> */}
      <div className="job_listing_area">
@@ -82,6 +80,7 @@ return(
     </div>
     {/* <!-- job_searcing_wrap end  --> */}
 
+  <CompanyCart/>
 
     {/* <!-- testimonial_area  --> */}
     <div className="testimonial_area  ">
@@ -92,46 +91,46 @@ return(
                         <h3>Testimonial</h3>
                     </div>
                     <div className="col-xl-12">
-                    <div className="testmonial_active owl-carousel">
-                        <div className="single_carousel">
-                            <div className="row">
-                                <div className="col-lg-11">
-                                    <div className="single_testmonial d-flex align-items-center">
-                                        <div className="thumb">
-                                            <img src="../public/assets/img/testmonial/author.png" alt=""/>
-                                            <div className="quote_icon">
-                                                <i className="Flaticon flaticon-quote"></i>
+                        <div className="testmonial_active owl-carousel">
+                            <div className="single_carousel">
+                                <div className="row">
+                                    <div className="col-lg-11">
+                                        <div className="single_testmonial d-flex align-items-center">
+                                            <div className="thumb">
+                                                <img src="/assets/img/testmonial/author.png" alt=""/>
+                                                <div className="quote_icon">
+                                                    <i className="Flaticon flaticon-quote"></i>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div className="info">
-                                            <p>"Working in conjunction with humanitarian aid agencies, we have supported programmes to help alleviate human suffering through animal welfare when people might depend on livestock as their only source of income or food.</p>
-                                            <span>- Micky Mouse</span>
+                                            <div className="info">
+                                                <p>"Working in conjunction with humanitarian aid agencies, we have supported programmes to help alleviate human suffering through animal welfare when people might depend on livestock as their only source of income or food.</p>
+                                                <span>- Micky Mouse</span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div className="single_carousel">
-                            <div className="row">
-                                <div className="col-lg-11">
-                                    <div className="single_testmonial d-flex align-items-center">
-                                        <div className="thumb">
-                                            <img src="../public/assets/img/testmonial/author.png" alt=""/>
-                                            <div className="quote_icon">
-                                                <i className="Flaticon flaticon-quote"></i>
+                            <div className="single_carousel">
+                                <div className="row">
+                                    <div className="col-lg-11">
+                                        <div className="single_testmonial d-flex align-items-center">
+                                            <div className="thumb">
+                                                <img src="/assets/img/testmonial/author.png" alt=""/>
+                                                <div className="quote_icon">
+                                                    <i className="Flaticon flaticon-quote"></i>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div className="info">
-                                            <p>"Working in conjunction with humanitarian aid agencies, we have supported programmes to help alleviate human suffering through animal welfare when people might depend on livestock as their only source of income or food.</p>
-                                            <span>- Micky Mouse</span>
+                                            <div className="info">
+                                                <p>"Working in conjunction with humanitarian aid agencies, we have supported programmes to help alleviate human suffering through animal welfare when people might depend on livestock as their only source of income or food.</p>
+                                                <span>- Micky Mouse</span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                    
                         </div>
-                   
                     </div>
-                </div>
                 </div>
            
             </div>
@@ -139,7 +138,7 @@ return(
     </div>
   
     {/* <!-- /testimonial_area  --> */}
-
+<div></div>
 
   
   

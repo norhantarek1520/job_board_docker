@@ -69,16 +69,16 @@ const CategroyDashboard = () => {
     // 1. Get user input for name and description
     const name = prompt('Enter new category name:');
     const description = prompt('Enter new category description:');
-  
+
     // 2. Validate user input (optional)
     // You can add checks for empty strings or invalid characters here
-  
+
     // 3. Prepare new category data object
     const newCategory = {
       name,
       description,
     };
-  
+
     // 4. Send POST request to add new category API endpoint
     try {
       const response = await axios.post('http://localhost:5000/api/category', newCategory);
@@ -94,92 +94,92 @@ const CategroyDashboard = () => {
       alert('An unexpected error occurred. Please try again later.');
     }
   };
-  
+
   return (<div>
 
-<div className="bradcam_area bradcam_bg_1">
-        <div className="container">
-            <div className="row">
-                <div className="col-xl-12">
-                    <div className="bradcam_text">
-                        <h3>top Categories  Available</h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-        
-  <div className="Category-dashboard">
-  
-
-    <div className="container">
-      <div className="table-wrapper">
-        <div className="table-title">
-          <div className="row">
-            <div className="col-sm-6">
-            
-            </div>
-            <div className="col-sm-6 add-Category-button text-right mt-3">
-              <button className="btn btn-success" onClick={() => handleAddNewCategory()}>
-              Add New Cateogry  
-                </button>             
-              
+    <div className="bradcam_area bradcam_bg_1">
+      <div className="container">
+        <div className="row">
+          <div className="col-xl-12">
+            <div className="bradcam_text">
+              <h3>top Categories  Available</h3>
             </div>
           </div>
         </div>
-
-        <table className="table table-striped table-hover">
-          <thead>
-            <tr>
-              <th></th>
-              <th>Name</th>
-              <th>Description</th>
-              <th>Edit</th>
-              <th>Delete</th>
-              
-            </tr>
-          </thead>
-          <tbody>
-          {categories.length === 0 ? (
-          <p>Loading categories...</p>
-        ) : (
-
-          categories.map((category) => (
-            <tr key={category._id}>
-              <td>
-                <span className="custom-checkbox">
-                  <input
-                    type="checkbox"
-                    id={`checkbox-${category._id}`}
-                    name="options[]"
-                    value={category._id}
-                  />
-                  <label htmlFor={`checkbox-${category._id}`}></label>
-                </span>
-              </td>
-              <td>{category.name}</td>
-              <td>{category.description}</td>
-              <td>
-              <button onClick={() => handleUpdateCategory(category._id)}>
-                Edit                 
-                </button>
-              </td>
-              <td>
-                <button onClick={() => handleDeleteCategory(category._id)}>
-                Delete                
-                </button>
-              </td>
-            </tr>
-          ))
-
-
-        )}
-            
-          </tbody>
-        </table>
       </div>
     </div>
-  </div>
+
+    <div className="Category-dashboard">
+
+
+      <div className="container">
+        <div className="table-wrapper">
+          <div className="table-title">
+            <div className="row">
+              <div className="col-sm-6">
+
+              </div>
+              <div className="col-sm-6 add-Category-button text-right mt-3">
+                <button className="btn btn-success" onClick={() => handleAddNewCategory()}>
+                  Add New Cateogry
+                </button>
+
+              </div>
+            </div>
+          </div>
+
+          <table className="table table-striped table-hover">
+            <thead>
+              <tr>
+                <th></th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Edit</th>
+                <th>Delete</th>
+
+              </tr>
+            </thead>
+            <tbody>
+              {categories.length === 0 ? (
+                <p>Loading categories...</p>
+              ) : (
+
+                categories.map((category) => (
+                  <tr key={category._id}>
+                    <td>
+                      <span className="custom-checkbox">
+                        <input
+                          type="checkbox"
+                          id={`checkbox-${category._id}`}
+                          name="options[]"
+                          value={category._id}
+                        />
+                        <label htmlFor={`checkbox-${category._id}`}></label>
+                      </span>
+                    </td>
+                    <td>{category.name}</td>
+                    <td>{category.description}</td>
+                    <td>
+                      <button onClick={() => handleUpdateCategory(category._id)}>
+                        Edit
+                      </button>
+                    </td>
+                    <td>
+                      <button onClick={() => handleDeleteCategory(category._id)}>
+                        Delete
+                      </button>
+                    </td>
+                  </tr>
+                ))
+
+
+              )}
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
 
 
   </div>);

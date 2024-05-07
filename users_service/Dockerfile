@@ -3,6 +3,7 @@ FROM python:3.12 as base
 WORKDIR /app
 
 COPY requirements.txt .
+RUN pip install django-cors-headers
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY VotingSystem/ .

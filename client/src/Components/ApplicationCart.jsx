@@ -35,92 +35,56 @@ function ApplicationCart() {
     }
   };
 
-  return (
-    <div>
-      <div className="apply_job_form white-bg" style={{ border: '1px solid black' , padding:"2rem"}}>
-        <h4>Apply for the job</h4>
-        <form onSubmit={handleSubmit}>
-          <div className="row">
-            <div className="col-md-6">
-              <div className="input_field">
-                <label htmlFor="name">Your Name</label>
-                <input
-                  type="text"
-                  placeholder="Your name"
-                  name="name"
-                  id="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-            </div>
-            <div className="col-md-6">
-              <div className="input_field">
-                <label htmlFor="email">Email</label>
-                <input
-                  type="email"
-                  placeholder="Email"
-                  name="email"
-                  id="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-            </div>
-            <div className="col-md-12">
-              <div className="input_field">
-                <label htmlFor="portfolio">Portfolio Link</label>
-                <input
-                  type="text"
-                  placeholder="Website/Portfolio link"
-                  name="portfolio"
-                  id="portfolio"
-                  value={formData.portfolio}
-                  onChange={handleChange}
-                />
-              </div>
-            </div>
-            <div className="col-md-12">
-              <div className="input_field">
-                <label htmlFor="jobId">jobId</label>
-                <input
-                  type="text"
-                  placeholder="jobId"
-                  name="jobId"
-                  id="jobId"
-                  value={formData.jobId}
-                  onChange={handleChange}
-                />
-              </div>
-            </div>
-            <div className="col-md-12">
-              <div className="input_field">
-                <label htmlFor="userId">userId</label>
-                <input
-                  type="text"
-                  placeholder="userId"
-                  name="userId"
-                  id="userId"
-                  value={formData.userId}
-                  onChange={handleChange}
-                />
-              </div>
-            </div>
-         
-            <div className="col-md-12">
-              <div className="submit_btn">
-                <button className="boxed-btn3 w-100" type="submit">
-                  Apply Now
-                </button>
-              </div>
-            </div>
-          </div>
-        </form>
-      </div>
-    </div>
-  );
+return (
+<div className="job_details_area">
+        <div className="container">
+            <div className="row">
+                <div className="col-lg-8">
+                      <div className="apply_job_form white-bg">
+                          <h4>Apply for the job</h4>
+                          <form onSubmit={handleSubmit}>
+                              <div className="row">
+                                
+                                  <div className="col-md-12">
+                                      <div className="input_field">
+                                      <input type="text" placeholder="Your name" name="name" id="name" value={formData.name} onChange={handleChange} required/>
+                                      </div>
+                                  </div>
+                                  <div className="col-md-12">
+                                      <div className="input_field">
+                                      <input type="email" placeholder="Your email" name="email" id="email" value={formData.email} onChange={handleChange} required/>
+
+                                      </div>
+                                  </div>
+                                  <div className="col-md-12">
+                                      <div className="input_field">
+                                      <input type="text" placeholder="Your portfolio" name="portfolio" id="portfolio" value={formData.portfolio} onChange={handleChange} required/>
+                                      </div>
+                                  </div>
+                                  <div className="col-md-12">
+                                      <div className="input_field">
+                                      <input type="text" placeholder="Your userId" name="userId" id="userId" value={formData.userId} onChange={handleChange} required/>
+                                      </div>
+                                  </div>
+                                  <div className="col-md-12">
+                                      <div className="input_field">
+                                      <input type="text" placeholder="Your jobId" name="jobId" id="jobId" value={formData.jobId} onChange={handleChange} required/>
+                                      </div>
+                                  </div>
+                                
+                              
+                                  <div className="col-md-12">
+                                      <div className="submit_btn">
+                                          <button className="boxed-btn3 w-100" type="submit">Apply Now</button>
+                                      </div>
+                                  </div>
+                                  
+                              </div>
+                          </form>
+                      </div>
+      </div></div></div>
+</div>
+);
 }
 
 export default ApplicationCart;

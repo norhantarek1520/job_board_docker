@@ -164,3 +164,4 @@ volumes:
   applications-data:
   companies-data:
   postgres_dev_data:
+  

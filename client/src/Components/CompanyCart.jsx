@@ -8,7 +8,7 @@ function CompanyCart() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:4000/api/companies/all');
+        const response = await axios.get('http://localhost:8080/api/companies/all');
         setCompanies(response.data.list);
       } catch (error) {
         console.error('Error fetching companies:', error);
@@ -19,33 +19,39 @@ function CompanyCart() {
     fetchData();
   }, []);
 
-  return (
-    <div>
-      
-      {companies.length > 0 && (
-        <div className="row">
-         {companies.map((company) => (
-  <div key={company._id} className="col-lg-4 col-xl-3 col-md-6">
-    <div className="single_company">
-      <div className="thumb">
-        <img src="img/svg_icon/5.svg" alt="" />
+return (<div>
+<div className="popular_catagory_area">
+<div className="container">
+  <div className="row">
+    <div className="col-lg-12">
+      <div className="section_title mb-40">
+        <h3>Popolar companies</h3>
       </div>
-      <a href="#">
-        <h3>{company.name}</h3>
-      </a>
-      <p>
-        <span>{company.location || "N/A"}</span> {company.owner}
-      </p>
-      <p>{company.description || "No description available."}</p>
     </div>
   </div>
-))}
+{companies.length == 0 ? (<p>No companies found.</p>) : (
+<div className="row">
+    {companies.map((company) => (
+    <div className="col-lg-4 col-xl-3 col-md-6">
+      <div className="single_company">
+            <div className="thumb"> <img src="/assets/img/svg_icon/5.svg" alt="" />  </div>
 
-        </div>
-      )}
-      {companies.length === 0 && <p>No companies found.</p>}
+            <a href="#">  <h3>{company.name}</h3>  </a>
+
+            <p>  <span>{company.location || "N/A"}</span> {company.owner}  </p>
+            
+            <p>{company.description || "No description available."}</p>
+            
+      </div>
     </div>
-  );
-}
+    
+    ))}
+
+</div>
+)}
+
+</div></div>
+
+</div>);}
 
 export default CompanyCart;
