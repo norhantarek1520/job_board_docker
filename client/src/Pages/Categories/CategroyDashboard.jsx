@@ -12,6 +12,7 @@ const CategroyDashboard = () => {
         setCategories(response.data.list);
       } catch (error) {
         console.error('Error fetching categories:', error);
+        window.alert('Server problem in Cateotry service . Please try again later.');
       }
     };
     fetchCategories();
@@ -31,6 +32,7 @@ const CategroyDashboard = () => {
       } catch (error) {
         console.error('Error deleting category:', error);
         alert('An unexpected error occurred. Please try again later.');
+        window.alert('Server problem in Cateotry service . Please try again later.');
       }
     }
   };
@@ -63,6 +65,7 @@ const CategroyDashboard = () => {
     } catch (error) {
       console.error('Error updating category:', error);
       alert('An unexpected error occurred. Please try again later.');
+      window.alert('Server problem in Cateotry service . Please try again later.');
     }
   };
   const handleAddNewCategory = async () => {
@@ -92,6 +95,7 @@ const CategroyDashboard = () => {
     } catch (error) {
       console.error('Error adding category:', error);
       alert('An unexpected error occurred. Please try again later.');
+      window.alert('Server problem in Cateotry service . Please try again later.');
     }
   };
 
@@ -120,9 +124,9 @@ const CategroyDashboard = () => {
 
               </div>
               <div className="col-sm-6 add-Category-button text-right mt-3">
-                <button className="btn btn-success" onClick={() => handleAddNewCategory()}>
+                {/* <button className="btn btn-success" onClick={() => handleAddNewCategory()}>
                   Add New Cateogry
-                </button>
+                </button> */}
 
               </div>
             </div>

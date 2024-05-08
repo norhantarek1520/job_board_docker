@@ -14,7 +14,7 @@ class CategoryController {
 
     })
     static getAllCategories = asyncHandler(async (req, res, next) => {
-        const limit = parseInt(req.query.limit || 5, 10); // Ensure numeric limit
+        const limit = parseInt(req.query.limit || 80, 10); // Ensure numeric limit
         const page = Math.max(1, parseInt(req.query.page || 1, 10)); // Handle negative or zero page
         const skip = (page - 1) * limit;
         const categories = await Category.find().skip(skip).limit(limit);

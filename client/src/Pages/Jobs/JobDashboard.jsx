@@ -16,6 +16,7 @@ const JobDashboard = () => {
         setJobs(response.data.data); // Assuming 'data' property holds the jobs array
       } catch (error) {
         setError(error);
+        window.alert('Server problem in jobs service . Please try again later.');
       } finally {
         setIsLoading(false);
       }
@@ -37,6 +38,7 @@ const JobDashboard = () => {
       } catch (error) {
         console.error('Error deleting job:', error);
         alert('An unexpected error occurred. Please try again later.');
+        window.alert('Server problem in Jobs service . Please try again later.');
       }
     }
   };
@@ -81,6 +83,7 @@ const JobDashboard = () => {
     } catch (error) {
       console.error('Error updating job:', error);
       alert('An unexpected error occurred. Please try again later.');
+      window.alert('Server problem in Jobs service . Please try again later.');
     }
   };
   const handleJobDetails = async (jobId) => {
@@ -99,6 +102,7 @@ const JobDashboard = () => {
       } catch (error) {
         console.error('Error geting job:', error);
         alert('An unexpected error occurred. Please try again later.');
+        window.alert('Server problem in Jobs service . Please try again later.');
       }
     }
   };
@@ -151,7 +155,7 @@ const JobDashboard = () => {
                   <th>Title</th>
                   <th>Job Type</th>
                   <th>Salary</th>
-                  <th>More Details</th>
+                  
                   <th>Edit</th>
                   <th> Delete</th>
 
@@ -169,12 +173,7 @@ const JobDashboard = () => {
                     <td>{job.title}</td>
                     <td>{job.job_type}</td>
                     <td>{job.salary}</td>
-                    <td>
-                    <button onClick={() => handleJobDetails(job._id)}>
-                    <a >More</a> 
-                    </button>
-                      
-                    </td>
+                  
                     <td>
                       <button onClick={() => handleUpdateJob(job._id)}>
                         Edit                 

@@ -154,6 +154,15 @@ services:
       postgres:
         condition: service_healthy
 
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8090:8080
+    networks:
+      - jobboard-app
+    
+
 networks:
   jobboard-app:
     driver: bridge  

@@ -14,25 +14,24 @@ app.get('/api', (req, res) => {
 })
  
  
-//task2
 app.post("/api/recommend", (req, res) => {
-        //
-        const message = req.body.message;
-       
-        if(message=="CV"||message=="cv"||message=="Cv"||message=="cV")
-          res.status(200).json({ messageLength: "https://www.cvmaker.com"});
+  //
+  const message = req.body.message.toLowerCase();
  
-        else if (message=="Picture"||message=="picture"||message=="PICTURE"||message=="Photo"||message=="image")
-          res.status(200).json({ messageLength: "https://www.lightxeditor.com"});
- 
-        else if (message=="Salary"||message=="salary"||message=="SALARY"||message=="money")
-          res.status(200).json({ messageLength: "https://www.upwork.com"});
- 
-        else if (message=="Skill"||message=="Skills"||message=="skill"||message=="SKILL")
-          res.status(200).json({ messageLength: "https://skillsbuild.org"});  
-        //
- 
-  });
+  if(message=="cv" )
+    res.status(200).json({ messageLength: "https://www.cvmaker.com"});
+
+  else if (message=="picture")
+    res.status(200).json({ messageLength: "https://www.lightxeditor.com"});
+
+  else if (message=="salary"||message=="money")
+    res.status(200).json({ messageLength: "https://www.upwork.com"});
+
+  else if (message=="skill"||message=="skills")
+    res.status(200).json({ messageLength: "https://skillsbuild.org"});  
+  //
+
+});
  
  
 app.listen(apiPort, () => console.log(`Server running on port ${apiPort}`));
