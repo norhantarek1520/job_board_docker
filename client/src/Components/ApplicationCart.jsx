@@ -1,15 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-
+import { useNavigate } from 'react-router-dom';
 
 function ApplicationCart() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     portfolio: '',
-    jobId: '', 
-    userId :''
+    jobId: '',
+    userId: '',
   });
+  const navigate = useNavigate(); // Hook for navigation
+  // Retrieve jobId from localStorage on component mount
+  useEffect(() => {
+    const retrievedJobId = localStorage.getItem('jobId');
+    if (retrievedJobId) {
+      setFormData({ ...formData, jobId: retrievedJobId });
+    }
+  }, []);
 
   const handleChange = (event) => {
     setFormData({ ...formData, [event.target.name]: event.target.value });
@@ -23,9 +31,13 @@ function ApplicationCart() {
         headers: { 'Content-Type': 'application/json' },
       });
 
-      if (response.status = 201) {
+      if (response.status === 201) {
         alert('Application submitted successfully!');
-        setFormData({ name: '', email: '', portfolio: '', jobId: '',  userId :'' }); // Clear form data after success (optional)
+        // Clear form data after success (optional)
+        setFormData({ name: '', email: '', portfolio: '', jobId: '', userId: '' });
+        localStorage.removeItem('jobId');
+        // Redirect to homepage after successful submission (using useNavigate)
+        navigate('/');
       } else {
         alert('There was an error submitting your application. Please try again later.');
       }
@@ -34,6 +46,7 @@ function ApplicationCart() {
       window.alert('Server problem in Application server . Please try again later.');
     }
   };
+
 
 return (
 <div className="job_details_area">
@@ -67,9 +80,17 @@ return (
                                       </div>
                                   </div>
                                   <div className="col-md-12">
-                                      <div className="input_field">
-                                      <input type="text" placeholder="Your jobId" name="jobId" id="jobId" value={formData.jobId} onChange={handleChange} required/>
-                                      </div>
+                                    <div className="input_field">
+                                      <input
+                                        type="text"
+                                        placeholder="Your jobId (pre-filled from localStorage)"
+                                        name="jobId"
+                                        id="jobId"
+                                        value={formData.jobId}
+                                        onChange={handleChange}
+                                        readOnly // Make jobId read-only to prevent accidental modification
+                                      />
+                                    </div>
                                   </div>
                                 
                               

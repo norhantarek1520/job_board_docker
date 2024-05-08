@@ -7,7 +7,10 @@ function Header() {
   useEffect(() => {
     // Check for stored login info (e.g., token in localStorage) here and update isLoggedIn state
     const storedToken = localStorage.getItem('accessToken');
-    setIsLoggedIn(!!storedToken);
+    const refreshToken = localStorage.getItem('refreshToken');
+    if (storedToken !== null || refreshToken !== null) {
+      setIsLoggedIn(true);
+    }
   }, []); // Empty dependency array to run only on initial render
 
   const handleLogout = async () => {
@@ -19,6 +22,8 @@ function Header() {
       if (response.status === 200) {
         localStorage.removeItem('accessToken');
         localStorage.removeItem('refreshToken');
+        // Additionally, remove any other user-specific data you might have stored in localStorage
+        localStorage.clear(); // Clears all items from localStorage (optional)
         setIsLoggedIn(false);
       } else {
         console.error('Logout failed:', response.data);

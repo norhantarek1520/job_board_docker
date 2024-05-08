@@ -3,6 +3,7 @@ import axios from 'axios';
 
 function JobCart() {
   const [jobs, setJobs] = useState([]);
+  const [selectedJobId, setSelectedJobId] = useState(null); // State to store selected job ID
 
   useEffect(() => {
     const fetchData = async () => {
@@ -17,6 +18,18 @@ function JobCart() {
 
     fetchData();
   }, []);
+
+  const handleApplyNow = (jobId) => {
+    setSelectedJobId(jobId); // Save the clicked job's ID
+
+    // Logic to handle navigation to the ApplicationArea (consider using history or useNavigate):
+    // - If using React Router:
+    //   import { useHistory } from 'react-router-dom';
+    //   const history = useHistory();
+    //   history.push('/ApplicationArea', { selectedJobId }); // Pass job ID as query parameter or state
+
+    localStorage.setItem('jobId', jobId); // Save to localStorage
+  };
 
   return (
     <div className="job_listing_area plus_padding">
@@ -58,9 +71,9 @@ function JobCart() {
                             <a className="heart_mark" href="#">
                               <i className="fa fa-heart"></i>
                             </a>
-                            <a href="/ApplicationArea" className="boxed-btn3">
-                              Apply Now
-                            </a>
+                            <button onClick={() => handleApplyNow(job._id)} className="boxed-btn3">
+                              <a href='/ApplicationArea'> Apply Now</a> 
+                            </button>
                           </div>
                           <div className="date">
                             <p>Date line: {job.deadline.substring(0, 10)}</p>
