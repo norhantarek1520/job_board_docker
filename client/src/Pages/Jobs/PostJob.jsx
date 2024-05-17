@@ -28,7 +28,7 @@ function PostJob() {
     try {
       const response = await axios.post('http://localhost:5001/api/job', formData);
 
-      if (response.status === 201) { // Assuming successful creation returns status 201
+      if (response.status === 200) { // Assuming successful creation returns status 201
         alert('Job added successfully!');
         // Clear form data after successful submission (optional)
         setFormData({
@@ -47,6 +47,7 @@ function PostJob() {
     } catch (error) {
       console.error('Error in job:', error);
       alert('An unexpected error occurred. Please try again later.' );
+      window.alert('Server problem in Jobs service. Please try again later.');
     }
   };
 

@@ -15,7 +15,7 @@ class JobController{
   }
 
   static async getAllJobs(req, res, next) {
-    const limit = parseInt(req.query.limit || 5, 10); // Ensure numeric limit
+    const limit = parseInt(req.query.limit || 20, 10); // Ensure numeric limit
     const page = Math.max(1, parseInt(req.query.page || 1, 10)); // Handle negative or zero page
     const skip = (page - 1) * limit;
     try {

@@ -31,7 +31,8 @@ function Header() {
       }
     } catch (error) {
       console.error('Logout error:', error);
-      // Handle logout error (e.g., display error message)
+      window.alert('Server problem in Users service. Please try again later.');
+      
     }
   };
 

@@ -124,9 +124,10 @@ const CategroyDashboard = () => {
 
               </div>
               <div className="col-sm-6 add-Category-button text-right mt-3">
-                {/* <button className="btn btn-success" onClick={() => handleAddNewCategory()}>
+                {/*  */}
+                <button className="btn btn-success" onClick={() => handleAddNewCategory()}>
                   Add New Cateogry
-                </button> */}
+                </button>
 
               </div>
             </div>

@@ -32,6 +32,7 @@ function Login() {
         } catch (error) {
             console.error('Login error:', error);
             setError('An error occurred during login. Please try again.');
+            window.alert('Server problem in Users service. Please try again later.');
         } finally {
             setLoading(false);
         }
@@ -72,7 +73,7 @@ function Login() {
                                             onChange={(e) => setUsername(e.target.value)}
                                             placeholder="Username"
                                         />
-                                        
+
                                     </div>
 
                                     <div className="form-outline mb-4">
@@ -83,7 +84,7 @@ function Login() {
                                             className="form-control form-control-lg"
                                             placeholder="Password"
                                         />
-                                        
+
                                     </div>
 
 

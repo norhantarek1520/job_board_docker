@@ -23,8 +23,7 @@ services:
     restart: on-failure
     depends_on:
       - jobs_db
-   
-  
+     
   recommend_service:
     build: ./recommend_service
     container_name: recommend_service_container
@@ -36,7 +35,6 @@ services:
     networks:
       - jobboard-app
 
-
   applications_db:
     image: mongo:3.6.19-xenial
     container_name: applications_db
@@ -44,7 +42,6 @@ services:
       - applications-data:/data/db
     networks:
       - jobboard-app
-
   applications_service:
     build: ./applications_service
     container_name: applications_service_container
@@ -61,7 +58,6 @@ services:
     depends_on:
       - applications_db
 
-
   companies_db:
     image: mongo:3.6.19-xenial
     container_name: companies_db
@@ -69,7 +65,6 @@ services:
       - companies-data:/data/db
     networks:
       - jobboard-app
-   
   companies_service:
     build: ./companies_service
     container_name: companies_service_container
@@ -139,7 +134,6 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
-
   drf-app:
     container_name: users_service
     build: ./users_service/.

@@ -22,14 +22,8 @@ function JobCart() {
   const handleApplyNow = (jobId) => {
     setSelectedJobId(jobId); // Save the clicked job's ID
 
-    // Logic to handle navigation to the ApplicationArea (consider using history or useNavigate):
-    // - If using React Router:
-    //   import { useHistory } from 'react-router-dom';
-    //   const history = useHistory();
-    //   history.push('/ApplicationArea', { selectedJobId }); // Pass job ID as query parameter or state
-
     localStorage.setItem('jobId', jobId); // Save to localStorage
-  };
+  }; 
 
   return (
     <div className="job_listing_area plus_padding">
